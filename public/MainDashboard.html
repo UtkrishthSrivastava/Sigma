@@ -1,0 +1,136 @@
+<div id="menu">
+    <div id="menu-items">
+      <!-- I made these divs instead of links so you can click on mobile to view the effect -->
+      <a href="discuss.html" style="text-decoration:none;"><div class="menu-item">Discuss</div></a>
+      <a style="text-decoration:none;" ><div class="menu-item">Fitness</div></a>
+      <a style="text-decoration:none;" ><div class="menu-item">Fashion</div></a>
+      <a style="text-decoration:none;" ><div class="menu-item">Your Feed</div></a>
+    </div>
+    <div id="menu-background-pattern"></div>
+    <img src="images\powerlogo.png" style="z-index: 999; width: 30%; margin-left: 20%;">
+    <div id="menu-background-image"></div>
+  </div>
+  
+<script></script>
+<style>body {
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+  }
+  
+  #menu {  
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  #menu-items {
+    margin-left: clamp(2rem, 10vw, 24rem);
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+  }
+  
+  #menu[data-active-index="0"] > #menu-background-pattern {
+    background-position: 0% -25%;
+  }
+  
+  #menu[data-active-index="1"] > #menu-background-pattern {
+    background-position: 0% -50%;
+  }
+  
+  #menu[data-active-index="2"] > #menu-background-pattern {
+    background-position: 0% -75%;
+  }
+  
+  #menu[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -100%;
+  }
+  
+  #menu[data-active-index="0"] > #menu-background-image {
+    background-position: center 45%;
+  }
+  
+  #menu[data-active-index="1"] > #menu-background-image {
+    background-position: center 50%;
+  }
+  
+  #menu[data-active-index="2"] > #menu-background-image {
+    background-position: center 55%;
+  }
+  
+  #menu[data-active-index="3"] > #menu-background-image {
+    background-position: center 60%;
+  }
+  
+  #menu-background-pattern {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.1) 9%, 
+      transparent 9%
+    );
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+    height: 100vh;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: opacity 800ms ease, 
+      background-size 800ms ease,
+      background-position 800ms ease;
+    width: 100vw;
+    z-index: 1;
+  }
+  
+  #menu-background-image {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/469/411/650/ryan-gosling-blade-runner-2049-depressing-movie-scenes-hd-wallpaper-preview.jpg");
+    background-position: center 40%;
+    background-size: 110vmax;
+    height: 100%;
+    left: 0px;  
+    opacity: 0.15;
+    position: absolute;
+    top: 0px;
+    transition: opacity 800ms ease,
+      background-size 800ms ease,
+      background-position 800ms ease;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  #menu-items:hover ~ #menu-background-pattern {
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
+  }
+  
+  #menu-items:hover ~ #menu-background-image {
+    background-size: 100vmax;
+    opacity: 0.1;
+  }
+  
+  #menu-items:hover > .menu-item {
+    opacity: 0.3;
+  }
+  
+  #menu-items:hover > .menu-item:hover {
+    opacity: 1; 
+  }
+  
+  .menu-item {
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: clamp(3rem, 8vw, 8rem);
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    text-decoration: none;
+    transition: opacity 400ms ease;
+  }
+  </style>
+  <script>const menu = document.getElementById("menu");
+
+    Array.from(document.getElementsByClassName("menu-item"))
+      .forEach((item, index) => {
+        item.onmouseover = () => {
+          menu.dataset.activeIndex = index;
+        }
+      });</script>

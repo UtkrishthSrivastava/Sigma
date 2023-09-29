@@ -1,0 +1,120 @@
+<div id="container">
+    <blog-card>
+      <a class="card-link" href="#">
+        <article class="blog-card">
+          <img class="post-image" src="public\images\man-light-skin-tone.png" />
+          <div class="article-details">
+            <h4 class="post-category">{{ category }}</h4>
+            <h3 class="post-title">{{ name }}</h3>
+            <p class="post-description">{{ desc }}</p>
+            <p class="post-author">By {{ author }}</p>
+          </div>
+        </article>
+      </a>
+    </blog-card>
+  </div>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+  
+    /* Variables */
+    :root {
+      --bg: #eedfcc;
+      --text: #777;
+      --black: #121212;
+      --white: #fff;
+      --red: #e04f62;
+      --border: #ebebeb;
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+  
+    /* Reset Box Sizing */
+    * {
+      box-sizing: border-box;
+    }
+  
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  
+    /* Body Styles */
+    body {
+      display: flex;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 0.9375rem;
+      min-height: 100vh;
+      margin: 0;
+      line-height: 1.6;
+      align-items: center;
+      justify-content: center;
+      text-rendering: optimizeLegibility;
+    }
+  
+    /* Blog Card Styles */
+    .blog-card {
+      display: flex;
+      flex-direction: row;
+      background: var(--white);
+      box-shadow: 0 0.1875rem 1.5rem var(--shadow);
+      border-radius: 0.375rem;
+      overflow: hidden;
+    }
+  
+    /* Card Link Styles */
+    .card-link {
+      position: relative;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+  
+    /* Article Details Styles */
+    .article-details {
+      padding: 1.5rem;
+    }
+  
+    /* Post Category Styles */
+    .post-category {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.0625rem;
+      margin: 0 0 0.75rem 0;
+      padding: 0 0 0.25rem 0;
+      border-bottom: 0.125rem solid var(--border);
+    }
+  
+    /* Container Styles */
+    #container {
+      width: 50%; /* Change to a percentage value */
+      height: 70%; /* Change to a percentage value */
+    }
+  
+    /* Post Image Styles */
+    .post-image {
+       /* Change to a percentage value */
+      height: 100%;
+    }
+  
+    /* Blog Card Grid Styles */
+    .blog-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr;
+    }
+  
+    /* Media Query Styles */
+    @media (max-width: 40rem) {
+      .blog-card {
+        grid-template-columns: auto;
+        grid-template-rows: 44% 56%; /* Change to percentage values */
+      }
+    }
+  </style>
+  

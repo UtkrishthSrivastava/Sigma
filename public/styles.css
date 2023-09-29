@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.ribbon {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: #03060B;
+    right: 0;
+    background-color: rgb(34, 39, 85); /* Choose your desired background color */
+    color: #ffffff; /* Choose your desired text color */
+    padding: 10px;
+    z-index: 9999; /* Set a high z-index to make sure the ribbon appears above other content */
+    text-align: right; /* Align the buttons to the right within the ribbon */
+}
+
+/* Styling for the buttons */
+.ribbon-button {
+    text-decoration: none;
+    background-color: rgb(34, 39, 85);
+    color: #ffae52; /* Choose your desired text color for buttons */
+    border: none;
+    font-family: monospace;
+    font-size: small;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+body{width: 100%;
+    padding-left: 0%;
+    overflow-x: hidden;
+     background-color: rgb(20, 24, 58);
+    z-index: 0;}
+     .project-tile {
+        display:inline-block ;
+        width: 2.5in;
+        height: 3.5in;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background-color: #0E1B33;
+        color: #60FFD9;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: transform .2s;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
+    }
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        font-family: myFirstFont;
+        color: #CED7F3;
+        margin-top: 20px;
+    }
+    
+    .project {
+        margin-top: 1in;
+        margin-bottom: 20px;
+        color: #CED7F3;
+        font-family: myFirstFont;
+    }
+    
+    .project-title {
+        font-size: 25px;
+        margin-bottom: 10px;
+        font-family: myFirstFont;
+    }
+    
+    .project-link {
+        color: #CED7F3;
+        text-decoration: none;
+        font-family: myFirstFont;
+        font-size: 20px;
+    }
+    .background_image{
+        width: 100%;
+        height: 400px;
+        background: #fff;
+        background-image: url(https://img.mensxp.com/media/content/2023/Mar/For-Header-Thumb-600X900--AMP-335_641022adb2a64.jpeg?w=2200&h=1116&cc=1);
+        background-size: cover;
+        background-position: center;
+      }
+    .background_image h6 {width: 100%; height: 400px;margin-top: 0.5in;background-image: linear-gradient(to top, rgb(20, 24, 58),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0));}
+    .background_image h1{margin-top:0%;
+         color: #b87c37;
+         font-family: 'Noto Sans', sans-serif;
+         text-align: center;font-size: xx-large;}
+    content{font-size: larger;color:#AAAAAA; text-align: center;margin-top: 25in;font-size: 30px; font-family: 'Poppins', sans-serif;}
