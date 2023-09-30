@@ -50,35 +50,7 @@ body{width: 100%;
         transition: transform .2s;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
     }
-    .projects {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        font-family: myFirstFont;
-        color: #CED7F3;
-        margin-top: 20px;
-    }
-    
-    .project {
-        margin-top: 1in;
-        margin-bottom: 20px;
-        color: #CED7F3;
-        font-family: myFirstFont;
-    }
-    
-    .project-title {
-        font-size: 25px;
-        margin-bottom: 10px;
-        font-family: myFirstFont;
-    }
-    
-    .project-link {
-        color: #CED7F3;
-        text-decoration: none;
-        font-family: myFirstFont;
-        font-size: 20px;
-    }
+
     .background_image{
         width: 100%;
         height: 400px;
@@ -93,111 +65,47 @@ body{width: 100%;
          font-family: 'Noto Sans', sans-serif;
          text-align: center;font-size: xx-large;}
     content{font-size: larger;color:#AAAAAA; text-align: center;margin-top: 25in;font-size: 30px; font-family: 'Poppins', sans-serif;}
-
-    #fashiondashboard {
-        background: radial-gradient(circle, #292c3095 10%, transparent 11%);
-        background-size: 4em 5em;
-        background-color: #090909;
-        opacity: 1;
-        width: 100vw;
-        height: 100vh;
-        overflow-x: hidden;
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .headtitle {
-        text-align: center;
-        font-weight: 600;
-        color: white;
-    }
-    
-    .row1 {
-        display: inline-flex;
+    nav.top-nav {
         width: 100%;
-        margin-top: 20px;
-        margin-left: 500px;
-    }
-    
-    .row2 {
-        display: inline-flex;
-        width: 100%;
-        margin-top: 50px;
-        margin-left: 500px;
-    }
-    
-    .item1 {
-        overflow: hidden; 
-        background: rgba( 255, 255, 255, 0.25 );
-        backdrop-filter: blur( 4px );
-        -webkit-backdrop-filter: blur( 4px );
-        border-radius: 40px 40px 10px 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        width: 15%;
-        height: 420px;
-        margin-right: 25px;
-    }
-    
-    .item2 {
-        overflow: hidden; 
-        background: rgba( 255, 255, 255, 0.25 );
-        backdrop-filter: blur( 4px );
-        -webkit-backdrop-filter: blur( 4px );
-        border-radius: 40px 40px 10px 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        width: 15%;
-        height: 420px;
-        margin-right: 25px;
-    }
-    
-    .item3 {
-        overflow: hidden; 
-        background: rgba( 255, 255, 255, 0.25 );
-        backdrop-filter: blur( 4px );
-        -webkit-backdrop-filter: blur( 4px );
-        border-radius: 40px 40px 10px 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        width: 15%;
-        height: 420px;
-        margin-right: 25px;
-    }
-    
-    .fashionimage {
-        width: 100%;
-        height: 80%;
-        border-radius: 40px;
-        filter: grayscale(50%);
-        transition: .3s ease-in-out;
-    }
-    
-    .fashionimage:hover {
-        border-radius: 0;
+        height: 60px;
+        border-radius: 15px;
+        background: #202123;
+        box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+        display: flex;
+        justify-content: space-between;
       }
-    
-    .itemtext {
-        font-weight: 500;
-        margin-top: -5px;
-        margin-left: 5px;
-        font-size: 15px;
-        color: white;
-    }
-    
-    .itemtext:hover {
-        text-decoration: underline;
-    }
-    
-    .textcontainer {
-        margin-top: 10px;
-    }
-    
-    .btt {
-        margin-left: 900px;
+      nav.top-nav .left-top-nav {
+        padding-left: 12px;
+        display: flex;
+      }
+      nav.top-nav .left-top-nav a {
+        font-size: 24px;
         text-decoration: none;
         color: white;
-        border-radius: 10px;
-        padding: 10px 10px 10px 10px;
-        background: rgba( 255, 255, 255, 0.25 );
-    }
-    
-    .btt:hover {
-        background: rgba(45, 45, 45, 0.764);
-    }
+        padding: 14px;
+        transition: .15s all ease-in-out;;
+      }
+      nav.top-nav .left-top-nav a:hover {
+        transform: scale(1.10);
+      }
+      nav.top-nav ul {
+        margin: 0;
+        display: flex;
+        padding-right: 12px;
+      }
+      nav.top-nav ul li {
+        list-style-type: none;
+        display: flex;
+        border-left: 1px solid rgba(255, 255, 255, .25);
+      }
+      nav.top-nav ul li a {
+        font-size: 18px;
+        padding: 18px 24px;
+        text-decoration: none;
+        color: white;
+        font-weight: 300;
+        transition: .15s all ease-in-out;;
+      }
+      nav.top-nav ul li a:hover {
+        background: rgba(255, 255, 255, .25);
+      }
