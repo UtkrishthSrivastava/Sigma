@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Clone</title>
+    <script src="https://kit.fontawesome.com/eeb81d71c9.js" crossorigin="anonymous"></script>
+    <style>
+        /* Your CSS Styles Here */
+    @import url('https://fonts.googleapis.com/css2?family=Manrope&family=Maven+Pro&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+        html, body {
+            font-family: Roboto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #444654;
+        }
+
+        nav.top-nav {
+            width: 100%;
+            height: 60px;
+            border-radius: 15px;
+            background: #202123;
+            box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav.top-nav .left-top-nav {
+            padding-left: 12px;
+            display: flex;
+        }
+
+        nav.top-nav .left-top-nav a {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            padding: 14px;
+            transition: .15s all ease-in-out;
+        }
+
+        nav.top-nav .left-top-nav a:hover {
+            transform: scale(1.10);
+        }
+
+        nav.top-nav ul {
+            margin: 0;
+            display: flex;
+            padding-right: 12px;
+        }
+
+        nav.top-nav ul li {
+            list-style-type: none;
+            display: flex;
+            border-left: 1px solid rgba(255, 255, 255, .25);
+        }
+
+        nav.top-nav ul li a {
+            font-size: 18px;
+            padding: 18px 24px;
+            text-decoration: none;
+            color: white;
+            font-weight: 300;
+            transition: .15s all ease-in-out;
+        }
+
+        nav.top-nav ul li a:hover {
+            background: rgba(255, 255, 255, .25);
+        }
+
+        .container {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 24px;
+        }
+
+        .post {
+            display: flex;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+        }
+
+        .post .vote-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            font-size: 18px;
+            color: cyan;
+            width: 10%;
+        }
+
+        .post .vote-container i {
+            font-size: 22px;
+        }
+
+        .post .vote-container .active {
+            color: #00B0FF;
+        }
+
+        .post .vote-container i:not(.active) {
+            color: #BDBDBD;
+        }
+
+        .post .vote-container .ion-chevron-down.active {
+            color: #6772e5;
+        }
+
+        .post .post-content-container {
+            width: 80%;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .post .post-content-container h2 {
+            font-weight: 500;
+            color: cyan;
+            margin: 0;
+            margin-bottom: 4px;
+        }
+
+        .post .post-content-container p {
+            margin: 0;
+            color: #7c7b7b;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .post .post-content-container p a {
+            color: #6772e5;
+            text-decoration: none;
+        }
+
+        .post .message-wrapper {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #424242;
+            border-left: 1px solid rgba(0, 0, 0, .12);
+            transition: .15s all ease-in-out;
+        }
+
+        .post .message-wrapper:hover {
+            color: cyan;
+            cursor: pointer;
+        }
+
+        .post .message-wrapper i {
+            font-size: 32px;
+        }
+
+        .post .message-wrapper .comment-count {
+            font-size: 12px;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <!-- Your Navigation Content Here -->
+        <div class="left-top-nav">
+            <a href="#">Disc<b>uss</b></a>
+          </div>
+          <ul>
+            <li>
+              <a href="3"><i class="fa-solid fa-plus"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+             <li>
+               <a href="#"><i class="fa-solid fa-house"></i></a>
+            </li>
+          </ul>
+    </nav>
+    <div class="container">
+        <!-- Content from text file will be displayed here -->
+    </div>
+
+    <script>
+        // JavaScript code goes here
+
+        // Function to load and display content from a text file
+function loadContentFromFile(fileURL) {
+    const container = document.querySelector('.container');
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', fileURL, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const lines = xhr.responseText.trim().split('\n');
+            lines.forEach(line => {
+                const [postTitle, postContent, voteCount] = line.split(' | ');
+
+                const post = document.createElement('div');
+                post.className = 'post';
+
+                const voteContainer = document.createElement('div');
+                voteContainer.className = 'vote-container';
+                voteContainer.innerHTML = `
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <span class="vote-amount">${voteCount}</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                `;
+
+                const postContentContainer = document.createElement('div');
+                postContentContainer.className = 'post-content-container';
+                postContentContainer.innerHTML = `
+                    <h2>${postTitle}</h2>
+                    <p>${postContent}</p>
+                `;
+
+                const messageWrapper = document.createElement('div');
+                messageWrapper.className = 'message-wrapper';
+                messageWrapper.innerHTML = `
+                    <i class="fa-regular fa-message"></i>
+                `;
+
+                post.appendChild(voteContainer);
+                post.appendChild(postContentContainer);
+                post.appendChild(messageWrapper);
+
+                container.appendChild(post);
+            });
+        }
+    };
+    xhr.send();
+}
+
+        // Load content from a text file when the page loads
+        const fileURL = 'life.txt'; // Replace with your file URL
+        loadContentFromFile(fileURL);
+
+    // Get all the upvote and downvote elements
+const upvoteButtons = document.querySelectorAll('.fa-chevron-up');
+const downvoteButtons = document.querySelectorAll('.fa-chevron-down');
+
+// Attach click event listeners to the upvote buttons
+upvoteButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        // Toggle the "active" class to change color
+        button.classList.toggle('active');
+
+        // Update the vote count if needed
+        updateVoteCount(index, button.classList.contains('active'));
+    });
+});
+    </script>
+</body>
+</html>
