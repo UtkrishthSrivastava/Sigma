@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>|**BACKEND TITLE**|</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <style>
+      /*START GENERAL CSS FOR BACKEND*/
+      @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css";
+      @import url(//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic);
+      * {
+        font-family: Lato;
+      }
+      body {
+        font-size: 16px;
+        background: #f3f3f3;
+        margin: 1px 0px 0px 0px;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        letter-spacing: -0.035em;
+        margin: 0px 0px 10px 0px;
+      }
+      h1 {
+        font-size: 2.5em;
+      }
+      h2 {
+        font-size: 1.8em;
+      }
+      h3 {
+        font-size: 1.5em;
+      }
+      img, p, a {
+        margin: 0px;
+      }
+      a {
+        color: #f44236;
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus,
+      a:active {
+        color: #f44236 !important;
+      }
+      button {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        margin: 0px;
+        background: #f3f3f3;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 5px;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      .header-content,
+      .body-content,
+      .footer-content {
+        height: auto;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 15px;
+      }
+      .header-section {
+        background: #fff;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+        height: auto;
+        padding: 18px 0px;
+      }
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .platform-logo {
+        width: auto;
+        max-width: 250px;
+        height: auto;
+        max-height: 50px;
+      }
+      .header-nav .nav-icon {
+        color: #414141;
+        font-size: 1.5em;
+        margin: 0px 8px;
+      }
+      .header-nav .nav-icon:hover {
+        color: #f44236;
+      }
+      .body-root {
+        min-height: 85.3vh;
+      }
+      .body-section {
+        padding: 25px 0px;
+      }
+      .body-content {
+        display: flex;
+      }
+      .sidebar {
+        width: 27%;
+        min-width: 200px;
+        height: auto;
+      }
+      .main {
+        width: 73%;
+        height: auto;
+      }
+      .sidebar-menu {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+      }
+      .sidebar-menu .menu-item {
+        color: #414141;
+        font-size: 1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: auto;
+        max-width: 180px;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+      }
+      .sidebar-menu .menu-icon {
+        font-size: 1.2em;
+        text-align: center;
+        width: 35px;
+        margin-right: 12px;
+      }
+      .main-container {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 5px;
+        padding: 25px 30px;
+        margin-bottom: 15px;
+      }
+      .footer-section {
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, .12);
+        height: auto;
+        padding: 20px 0px;
+      }
+      .footer-container.msh-power {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .footer-container.msh-power p {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        padding-right: 7px;
+      }
+      .msh-logo {
+        width: auto;
+        max-width: 150px;
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2em;
+        }
+        h2 {
+          font-size: 1.6em;
+        }
+        h3 {
+          font-size: 1.3em;
+        }
+        button {
+          font-size: 0.9em;
+        }
+        .header-content {
+          justify-content: center;
+        }
+        .platform-logo {
+          max-width: 225px;
+        }
+        .header-nav {
+          display: none;
+        }
+        .body-root {
+          min-height: 74.5vh;
+        }
+        .body-section {
+          padding: 15px 0px;
+        }
+        .body-content {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+        }
+        .main {
+          width: 100%;
+        }
+        .sidebar-menu {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding-bottom: 2px;
+        }
+        .sidebar-menu .menu-item {
+          width: 48%;
+          margin-bottom: 15px;
+        }
+        .sidebar-menu .menu-icon {
+          margin-right: 6px;
+        }
+        .main-container {
+          padding: 15px 20px;
+          margin: 0px -16px 15px;
+          border-radius: 0px;
+        }
+      }
+      /*END GENERAL CSS FOR BACKEND*/
+      /*START CSS FOR CREATE BLOG PAGE*/
+      form {
+        padding-top: 10px;
+      }
+      label {
+        display: block;
+        font-size: 0.9em;
+        padding-bottom: 5px;
+      }
+      input,
+      textarea,
+      select {
+        font-size: 0.9em;
+        width: 100%;
+        margin: 0;
+        padding: 10px 8px;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      }
+      input,
+      select {
+        height: 40px;
+      }
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+      }
+      .form-field {
+        margin-bottom: 14px;
+      }
+      .form-field.short input,
+      .form-field.short select,
+      .form-field.short textarea {
+        max-width: 250px;
+      }
+      .form-field.medium input,
+      .form-field.medium select,
+      .form-field.medium textarea {
+        max-width: 450px;
+      }
+      input[type="checkbox"] {
+        height: 20px;
+        width: 20px;
+      }
+      .form-field.checkbox {
+        display: flex;
+      }
+      .form-field.checkbox label {
+        padding: 1px 0px 0px 3px;
+      }
+      input[readonly] {
+        background: #f3f3f3;
+      }
+      button.publish,
+      button.update {
+        background: black;
+        border-color: black;
+        color: white;
+      }
+      .new-post-actions,
+      .edit-post-actions {
+        display: flex;
+        margin-top: 25px;
+      }
+      .new-post-actions button,
+      .edit-post-actions button {
+        font-size: 0.9em;
+        height: 40px;
+        padding: 5px 15px;
+        margin-right: 6px;
+      }
+      .field-7 {
+        padding-top: 2px;
+      }
+      /*END CSS FOR CREATE BLOG PAGE*/
+    </style>
+  </head>
+  <body>
+    <div class="backend-root">
+      <header>
+        <div class="header-section">
+          <div class="header-content">
+            <div class="header-container logo">
+            </div>
+            <div class="header-container header-nav">
+              <a href="#"><i class="fas fa-question-circle nav-icon"></i></a>
+              <a href="#"><i class="fas fa-bell nav-icon"></i></a>
+              <a href="#"><i class="fas fa-user-circle nav-icon"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="body-root">
+        <div class="body-section">
+          <div class="body-content">
+            <div class="sidebar">
+              <div class="sidebar-content">
+                <div class="sidebar-container sidebar-menu">
+                  <a href="#" class="menu-item"><i class="fas fa-home menu-icon"></i>Dashboard</a>
+                  <a href="#" class="menu-item"><i class="fas fa-bolt menu-icon"></i>Create</a>
+                  <a href="#" class="menu-item"><i class="fas fa-folder menu-icon"></i>Content</a>
+                  <a href="#" class="menu-item"><i class="fas fa-comments menu-icon"></i>Community</a>
+                  <a href="#" class="menu-item"><i class="fas fa-trophy menu-icon"></i>Pro</a>
+                  <a href="#" class="menu-item"><i class="fas fa-tag menu-icon"></i>Shop</a>
+                  <a href="#" class="menu-item"><i class="fas fa-chart-area menu-icon"></i>Analytics</a>
+                  <a href="#" class="menu-item"><i class="fas fa-cog menu-icon"></i>Settings</a>
+                </div>
+              </div>
+            </div>
+            <div class="main">
+              <div class="main-content">
+                <div class="main-container new-blog">
+                  <h2>Create a new blog post</h2>
+                  <div class="new-post-form blog">
+                    <form class="new-blog-form">
+                      <div class="form-field field-1 medium">
+                        <label for="post-title">Post Title</label>
+                        <input id="post-title" type="text" name="post-title">
+                      </div>
+                      <div class="form-field field-2 medium">
+                        <label for="url-slug">URL Slug</label>
+                        <input id="url-slug" type="text" name="url-slug">
+                      </div>
+                      <div class="form-field field-3 medium">
+                        <label for="post-description">Post Description</label>
+                        <textarea id="post-description" type="text" rows="3" name="post-description"></textarea>
+                      </div>
+                      <div class="form-field field-4 short">
+                        <label for="post-thumbnail">Post Thumbnail</label>
+                        <input id="post-thumbnail" type="file" name="post-thumbnail">
+                      </div>
+                      <div class="form-field field-5 short">
+                        <label for="post-category">Category</label>
+                        <select id="post-category" name="post-category">
+                          <option value="" disabled selected>Select</option>
+                          <option value="supercars">Supercars</option>
+                          <option value="trucks">Trucks</option>
+                          <option value="classics">Classics</option>
+                          <option value="reviews">Reviews</option>
+                        </select>
+                      </div>
+                      <div class="form-field field-6 short">
+                        <label for="email-notification">Email Notification</label>
+                        <select id="email-notification" name="email-notification">
+                          <option value="" disabled selected>Select</option>
+                          <option value="email-all">Email all users</option>
+                          <option value="email-paid">Email only paid members</option>
+                          <option value="no-email">Do not send an email</option>
+                        </select>
+                      </div>
+                      <div class="form-field field-7 checkbox">
+                        <input id="pro-only" type="checkbox" name="pro-only">
+                        <label for="pro-only">Lock this image for paid members only</label>
+                      </div>
+                      <div class="form-field field-8 checkbox">
+                        <input id="featured-post" type="checkbox" name="featured-post">
+                        <label for="featured-post">Make this your featured post</label>
+                      </div>
+                      <div class="new-post-actions">
+                        <div class="button-container">
+                          <button class="save-draft" type="submit">Save as draft</button>
+                        </div>
+                        <div class="button-container">
+                          <button class="publish" type="submit">Publish</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-section">
+          <div class="footer-content">
+            <div class="footer-container msh-power">
+              <p>Powered by</p>
+              <img src="https://salomondrin.com/img/socialhub.png" class="msh-logo">
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
